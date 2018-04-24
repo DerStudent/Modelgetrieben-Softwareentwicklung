@@ -9,6 +9,8 @@ Die modellbasierte bzw. modellgetriebene Softwareentwicklung (MBSD, MDSD, MDD) i
 * https://en.wikipedia.org/wiki/Eclipse_Sirius
 * http://www.eclipse.org/community/eclipse_newsletter/2013/november/article1.php
 * https://projects.eclipse.org/projects/modeling.sirius
+* https://jaxenter.de/erstes-release-fur-eclipse-sirius-1935
+* https://jaxenter.de/lets-get-sirius-2024
 
 * Tutorial
     * http://www.eclipse.org/sirius/getstarted.html
