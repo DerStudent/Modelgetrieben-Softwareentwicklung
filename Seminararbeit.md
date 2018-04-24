@@ -13,3 +13,22 @@
     * Installation
     * Tipps & Tricks
 5. Zusammenfassung
+
+
+## 1. Einleitung
+### 1.1 Was ist Modelgetriebe Softwareentwicklung
+* Motivation
+* Vorsteile
+* Einsatz
+
+## 2. Konzept
+
+## 3. Realisierung
+
+## 4. Tooling
+
+### 4.1 Installation
+
+### 4.2 Tipps & Tricks
+
+## 5. Zusammenfassung
