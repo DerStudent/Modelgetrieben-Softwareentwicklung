@@ -13,5 +13,3 @@
     * Installation
     * Tipps & Tricks
 5. Zusammenfassung
-
-
