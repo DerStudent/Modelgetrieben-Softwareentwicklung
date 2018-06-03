@@ -1,26 +1,20 @@
-# Seminar: Modelgetrieben-Softwareentwicklung
+---
+docid: ""
+title: "Erstellung von grafischen Modellierungswerkzeugen mit Eclipse Sirius"   
+subtitle: "Seminar Modellgetriebene Softwareentwicklung"  
+author: "Denis Ayana"  
+institute: "FH Dortmund"  
+date: "03.06.2018"  
+lang: "de-DE"  
+...
 
-
-## Thema: Erstellung von grafischen Modellierungswerkzeugen mit Eclipse Sirius
-
-## Inhalt
-1. Einleitung  
-    * Einordnung in MDSD 
-2. Konzept
-3. Realisierung
-    * Konstrukte
-4. Tooling
-    * Installation
-    * Tipps & Tricks
-5. Zusammenfassung
-
-## 1. Einleitung
-### 1.1 Motivation
+# Einleitung
 * Steigerung von Effizienz, Qualität und Nachhaltigkeit
 * Modell zur Dokumentation vs Entwicklung
 
+## Einordnung in MDSD
 
-## 2. Konzept
+# Konzepte
 * MDSD
     * > MDSD ist ein Oberbegriff für Techniken, die aus
         formalen Modellen automatisiert lauffähige Software erzeugen.
@@ -34,23 +28,34 @@
     * General PurposeLanguages
     * Domain-specificLanguages
 
-## 3. Realisierung
+## Konstrukte der Sprache
+
+# Realisierung
 * Codegenerierung
     * Programmcode
     * Konfigurationsdatein
     * Dokumente
 * MDSD Workflow
 * MDA Workflow
- 
 
-## 4. Tooling
+## Verwendung
 
 ### Eclipse Sirius
 Eclipse Sirius ist ein Software Projekt der Eclipse Fondation. 
 Eclipse Sirius ermöglicht dem Benutzer eigne, anwendungsspezifische grafische modelirungs Editoren durch den Einsatz von EMF zu realisieren.
 
-### 4.1 Installation
 
-### 4.2 Tipps & Tricks
+## Workflow
 
-## 5. Zusammenfassung
+## Beispiele
+
+# Tooling
+
+## Installation
+
+## Tipps und Tricks
+
+# Zusammenfassung
+
+# Literatur
+
