@@ -73,6 +73,8 @@ Eclipse Sirius ist ein OpenSource Projekt der Eclipse Foundation. Es wurde 2013 
 # Tooling
 ## Installation
 ## Tipps und Tricks
+* bilder von den objekten ändern
+* probleme mit der manifest datei beheben. durch  preferences -> plug-in development -> target platform deactivate then activate
 
 # Zusammenfassung
 
