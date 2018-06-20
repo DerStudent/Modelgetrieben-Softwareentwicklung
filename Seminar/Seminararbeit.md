@@ -82,8 +82,11 @@ Auf der Eclipse Con 2013 wurde Eclipse Sirius erstmals, von Obeo, vorgestellt. D
 ## Installation
 obeodesigner 
 ## Tipps und Tricks
+* bidirektionale ralationen kp wie abbilden
 * bilder von den objekten ändern
 * probleme mit der manifest datei beheben. durch  preferences -> plug-in development -> target platform deactivate then activate
+problem neim anzeigen des namen- im square den lable expression in feature:bezeichnung ändern oder dass attribut der klasse was den namen speichert
+* 
 
 # Zusammenfassung
 
