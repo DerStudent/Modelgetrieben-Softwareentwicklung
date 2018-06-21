@@ -97,10 +97,22 @@ Ein Viewpoint, zu Deutsch Aussichtspunkt, kapselt eine bestimmte Teil der Präse
 Im nachfolgenden Teil der Seminararbeit wird die Verwendung von Eclipse Sirius und die Realisierung einer eigenen Entwicklungsumgebung, zum Erstellen von grafischen Modellen, beschrieben. Dazu wird an Hand eines konkreten Beispiels jeder Schritt einzeln erklärt. Am Anfang wird ein Metamodel erstellt, welches die Domäne abbildet. Aufbauend auf dem Metamodel wird in einer eigenen Entwicklungsumgebung ein konkretes Model erstellt. Zum Schluss wird noch die Erstellung eigener Modelierungswerkzeuge, zum Hinzufügen von Objekten und deren Beziehungen zueinander, erklärt. 
 
 ## Beispiele
-Allgemin erklärt was die Domäne ist. was das metamodel beschreibt
+Das gewählte Beispiel beschreibt die Domäne einer Hochschule. Neben der Hochschule gibt es Personen, die entweder ein Dozent oder ein Student sind. Des Weiteren gibt es Module. In der nachfolgen Abbildung sind die einzelnen Klassen im Metamodel aufgeführt.
+* bild mit klassen aus metamodel
+
+Eine Hochschule besteht aus Personen und Modulen. Zu jedem Modul gibt es einen oder mehere Dozenten und Null bis meherere Studentn. Ein Dozent kann ein beliebig viele Module haben. Jedoch kann ein Student null bis mehrere Module haben. Sowohl Student als auch Dozent haben eine Hochschule, zu der sie gehören. Die Hochschule besitzt als Attribute einen "name" und eine "addresse". Beide Attribute sind vom Datentype EString. Die abstrakte Oberklassse Person hat ein "name" Attribut, welches auch vom Datentyp EString ist. Der Student besitz darüber hinaus noch eine "matrikelnr" Attribut vom Datentyp EInt. Der Dozent hat ein "titel" Attribut vom Datentyp EString. Das Modul hat ein "bezeichnung" Attribut vom Datentyp EString.
+* bild von beziehungen
+
+
 
 ## Workflow
-geneiren von code 
+
+Sobald die Erstellung des Metamodells abgeschlossen ist kann daraus Programmcode generiert werden. Durch ein Rechtsklick in die Oberfläche des Metamodells öffnet sich ein Kontextmenü. In dem Kontextmenü muss der Punkt "Generate -> All" ausgewählt werden. Durch diese Aktion werden mehrere JAVA-Klassen und zwei weitere Projekte generiert.
+* bild von generiertem code
+
+
+
+ 
 dann in neuer workbanch die konkreten projekte mit dem viewpoint projekt
 dann die objekte erstellen
 dann die grafischen aspekte erstellen
