@@ -68,15 +68,29 @@ Als domänenspezifische Sprache versteht sich eine formale Sprache oder auch Mod
 Auf der Eclipse Con 2013 wurde Eclipse Sirius erstmals, von Obeo, vorgestellt. Derzeit ist Eclipse Sirius ein Opensource Projekt der Eclipse Foundation. Eclipse Sirus ist ein Framework zur Entwickelung von domänenspezifischen Modellierungswerkzeugen. Dazu nutzt Eclipse Sirius das Eclipse Modeling Framwork(EMF) für das Erstellen und bearbeiten von Modellen, sowie das Grafical Modeling Framework(GMF) für die grafische Darstellung dieser Modelle. Durch die Verwendung von Eclipse Sirius ist es den Benutzern möglich verschiedene Modelle grafisch darzustellen. Grundlage dieser Modelle ist eine domänenspezifische Sprache(DSL). Diese domänespezifische Sparche ist in Form eines Metamodels definiert.   
 
 # Konzepte
+aus metamodel code erstellt der für den editor ist
 
-## Konstrukte der Sprache
+was man allgemien damit erstellen kann
+## Diagramme
+## Tabelen und Metricen
+## Bäume
+## Viewpoints
+
 
 # Realisierung
-## Verwendung
+## Beispiele
+Allgemin erklärt was die Domäne ist. was das metamodel beschreibt
+
 ## Workflow
+geneiren von code 
+dann in neuer workbanch die konkreten projekte mit dem viewpoint projekt
+dann die objekte erstellen
+dann die grafischen aspekte erstellen
+dann die cration tools
+
 ### MDSD Workflow
 ### MDA Workflow
-## Beispiele
+
 
 # Tooling
 ## Installation
