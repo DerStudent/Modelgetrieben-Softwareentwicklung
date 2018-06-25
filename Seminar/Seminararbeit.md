@@ -155,11 +155,36 @@ Um das Diagramm zu testen wird dem zuvor erstellten Modeling Project eine Viewpo
 * Bild von fertigen Modell
 
 ### Entwicklung grafischer Modellierungswerkzeuge
-Da es beider Erstellung eines solchen Modelierungswerkzeuges auch sinvoll ist, dass aus Diagramm heraus neue Objekte hinzugefügt werden können, werden zusätzliche Werkzeuge entwickelt. Diese Werkzeuge könne dann von den Benutzern eingesetzt werden, um z.B. einen neuen Studenten oder ein neues Modul, so wie einen Dozenten zu erstellen. 
+Da es beider Erstellung eines solchen Modelierungswerkzeuges auch sinvoll ist, dass aus Diagramm heraus neue Objekte hinzugefügt werden können, werden zusätzliche Werkzeuge entwickelt. Diese Werkzeuge könne dann von den Benutzern eingesetzt werden, um z.B. einen neuen Studenten oder ein neues Modul, so wie einen Dozenten zu erstellen. Des Weiteren wird ein Werkzeug entwickelt, welches den Beutzern die Möglichkeit bietet, zwischen den Objekten Beziehungen zu erstellen.
+
+Für die Entwicklung der genannten Werkzeuge wird zunächst eine Sektion für die Werkzeuge erstellt. Diese befindet sich, wie auch die Nodes und Edges, unterhalb des Default Layers. Diese Section wird über eienen Rechtsklick auf den Default Layer->New Tool->Section angelegt. Innerhalb dieser Sektion wird über Rechtsklick->New Element Creation->Node Creation eine neues Werkzeug zum Anlegen von Nodes erstellt. Diese Werkzeug bekommt die Id "createStudent" und als Node Mapping wird StudentNode eingetragen. Unterhalb der Node Creation befindet sich eine Begin Action. Dieser Action wird, über Rechtsklick->New Operation->Change Context, ein Change Context hinzugefügt. Für die Browse Expression wird der Wert "var:container" angeben. Diese Expression sorgt dafür das wir mit dem im Context definierten Container, welcher hier die Hochschulinstanz ist, arbeiten können. Innerhalb dieses Change Context wird, über Rechtsklick->New Operation-Create Instance, eine neue Create Instance erzeugt. Diese Create Instance wird für den Reference Name mit dem Wert "person" und für den Type Name mit dem Wert "hochschule::Student" definiert. Wiederum die Create Instance bekommt, über Rechtsklick->New Operation->Set, eine Set Operation hinzugefügt. Die Set Operation erhält für den Feature Name den Wert "name" und für die Value Expression wir der Wert "aql:'student'+container.person->filter(hochschule::Student)->size()" eingetragen. Der Wert der Value Expression sorgt dafür, dass bei dem Hinzufügen eines weiteren Studentens der angezeigte Name die Zeichenkette "student" plus die Anzahl aller vorhandenen Studenten im Diagramm angehängtbekommt. So erhält der nächste hinzugefügte Student den Namen "student2", bei einem weitern "student3" und bei noch einem weitern "student4".
+Für die Erstellung einer weiterern Nodes sind im Folgenden die Werte, für die Erstellung des Werkzeuges, aufgelistet.
+*   Node Creation
+    *   Id: "createDozent"
+        Node Mapping: DozentNode
+    * Change Context
+        Browse Expression: "var:container"
+    * Create Instace 
+        Reference Name: "person"
+        Type Name: "hochschule::Dozent"
+    * Set Operation
+        Feature Name: "name"
+        Value Expression: "aql:'dozent'+container.person->filter(hochschule::Dozent)->size()"
+
+*   Node Creation
+    *   Id: "createModul"
+        Node Mapping: ModulNode
+    * Change Context
+        Browse Expression: "var:container"
+    * Create Instace 
+        Reference Name: "modul"
+        Type Name:  "hochschule::Modul"
+    * Set Operation
+        Feature Name: "bezeichnung"
+        Value Expression: "aql:'modul'+container.modul->filter(hochschule::Modul)->size()"
 
 
-### MDSD Workflow
-### MDA Workflow
+
 
 
 # Tooling
