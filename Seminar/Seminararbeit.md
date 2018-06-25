@@ -159,45 +159,51 @@ Da es beider Erstellung eines solchen Modelierungswerkzeuges auch sinvoll ist, d
 
 Für die Entwicklung der genannten Werkzeuge wird zunächst eine Sektion für die Werkzeuge erstellt. Diese befindet sich, wie auch die Nodes und Edges, unterhalb des Default Layers. Diese Section wird über eienen Rechtsklick auf den Default Layer->New Tool->Section angelegt. Innerhalb dieser Sektion wird über Rechtsklick->New Element Creation->Node Creation eine neues Werkzeug zum Anlegen von Nodes erstellt. Diese Werkzeug bekommt die Id "createStudent" und als Node Mapping wird StudentNode eingetragen. Unterhalb der Node Creation befindet sich eine Begin Action. Dieser Action wird, über Rechtsklick->New Operation->Change Context, ein Change Context hinzugefügt. Für die Browse Expression wird der Wert "var:container" angeben. Diese Expression sorgt dafür das wir mit dem im Context definierten Container, welcher hier die Hochschulinstanz ist, arbeiten können. Innerhalb dieses Change Context wird, über Rechtsklick->New Operation-Create Instance, eine neue Create Instance erzeugt. Diese Create Instance wird für den Reference Name mit dem Wert "person" und für den Type Name mit dem Wert "hochschule::Student" definiert. Wiederum die Create Instance bekommt, über Rechtsklick->New Operation->Set, eine Set Operation hinzugefügt. Die Set Operation erhält für den Feature Name den Wert "name" und für die Value Expression wir der Wert "aql:'student'+container.person->filter(hochschule::Student)->size()" eingetragen. Der Wert der Value Expression sorgt dafür, dass bei dem Hinzufügen eines weiteren Studentens der angezeigte Name die Zeichenkette "student" plus die Anzahl aller vorhandenen Studenten im Diagramm angehängtbekommt. So erhält der nächste hinzugefügte Student den Namen "student2", bei einem weitern "student3" und bei noch einem weitern "student4".
 Für die Erstellung einer weiterern Nodes sind im Folgenden die Werte, für die Erstellung des Werkzeuges, aufgelistet.
-*   Node Creation
-    *   Id: "createDozent"
+*   Node Creation:
+    *   Id: "createDozent"<br>
         Node Mapping: DozentNode
-    * Change Context
+    * Change Context: <br>
         Browse Expression: "var:container"
-    * Create Instace 
-        Reference Name: "person"
+    * Create Instace <br>
+        Reference Name: "person"<br>
         Type Name: "hochschule::Dozent"
-    * Set Operation
-        Feature Name: "name"
+    * Set Operation:<br>
+        Feature Name: "name"<br>
         Value Expression: "aql:'dozent'+container.person->filter(hochschule::Dozent)->size()"
 
-*   Node Creation
-    *   Id: "createModul"
+*   Node Creation:
+    *   Id: "createModul"<br>
         Node Mapping: ModulNode
-    * Change Context
+    * Change Context:<br>
         Browse Expression: "var:container"
-    * Create Instace 
-        Reference Name: "modul"
+    * Create Instace: <br>
+        Reference Name: "modul"<br>
         Type Name:  "hochschule::Modul"
-    * Set Operation
-        Feature Name: "bezeichnung"
+    * Set Operation:<br>
+        Feature Name: "bezeichnung"<br>
         Value Expression: "aql:'modul'+container.modul->filter(hochschule::Modul)->size()"
 
+* bild von node creation
 
 
+Da es zwischen den Objekten auch Beziehungen gibt, muss es auch eine Möglichkeit geben diese durch ein Modellierungswerkzeug zu erstellen. Die Erstellung dieser Werkzeuge läuft ähnlich, wie die Erstellung der Node Creation, ab. Zu nächt wird der Section ein Edge Creation Tool, über Rechtsklick auf Section->New Element Creation-> Edge Creation, hinzugefügt. Diese Edge Creation bekommt als Id den Wert "setStudentToModul" und für das Edge Mapping wird die Egde StudentToModul ausgewählt. Auch hier wird in der Begin Action ein Change Context erstellt. Der Change Context erhält für die Browse Expression den Wert "var:source" und nicht "var:target", wie bei der Erstellung der Node Creation. Dem Change Context wiedrum wird direkt eine Set Operation hinzugefügt. Die Set Operation hat für den Feature Name den Wert "modulW und für die Value Expression den Wert "var:target".
+* bild von edge creation
 
+Nun da die ERstellung der Modellierungswerkzeuge abgeschlossen ist, können die Benutzer direkt Objekte und Beziehungen erstellen. Diese Modellierungswerkzeuge werden standardmäßig rechts neben dem Digramm angezeigt.
+* bild von werkzeugen.
 
-# Tooling
-## Installation
-obeodesigner 
+# Tooling und Instalation
+Für die Benutzumg von Eclipse Sirius brach man nicht viel Software und noch weniger Konfigurationsaufwand. Die Erfinderfirma von Eclipse Sirius bietet auf Ihrer Website eine vorkonfigurierte Entwicklungsumgebung, den Obeo Designer, an. Der Obeo Designer basiert auf der herkömlichen Entwicklungsumgebung Eclipse. Allerdings enthält der Obeo Designer schon Eclipse Sirius und die benötigten Frameworks, welche für einen reibungsloses Arebiten benötigt werden. Deshalb wird in diesem Abschnitt nicht erklärt, wie man Eclipse SIrius in ein herkömliches Eclipse einbindet. Es ist an dieser Stelle das einfachte, um Zeit und Aufwand zu sparen, den Obeo Designer herunterzuladen und zu benutzen. 
+
 ## Tipps und Tricks
-* bidirektionale ralationen kp wie abbilden
-* bilder von den objekten ändern
-* probleme mit der manifest datei beheben. durch  preferences -> plug-in development -> target platform deactivate then activate
-problem neim anzeigen des namen- im square den lable expression in feature:bezeichnung ändern oder dass attribut der klasse was den namen speichert
-* 
+In den folgenden Abscnitten wird kurz erklärt, wie einige beider Verwendung von Eclispe Sirius aufgetretene Fehler behoben werden können. Da, wie im oberen Abschnitt beschrieben, keine eigene Instalation bzw. EInbindung von Eclipse Sirius stattgefunden hat,ist dieses Kaptel raltiv kurz gehalten. 
+### Probleme mit der MANIFEST.MF
+Bei der Einbindung von einigen Abhänigkeiten kamm das Problem auf, das einige Packete nicht aufgelöst werden konnten. Dises Problem lies sich relativ einfach beheben. Dazu wird unter Window->Preferences->Plug-in Development->Target Platform der Hacken von der aktiven "running Platform" entfernt und das ganze  mit Apply and Close gespeichert. Danach wird der Hacken auf dem gleichen Weg wieder gesetzt und das ganze  gespeichert. Es ist daruf zu achten, dass eine Running Plattform gewählt wird, welche nicht mit einem Roten "X" versehen ist. Darauf hin hat das Auflösen der Packete ohne Probleme funktioniert.
+### Bilder der Elemente im Diagramm ändern
+Das Bild für das Hochschulelment wird unter /name.des.projekts.editor/icons/full/obj16/HocchschuleModelFile.gif gespeichert. Die Größe des Bildes beträt 16x16 Pixel. Die Weiteren Bilder befinden sich unter /name.des.projekts.edit/icons/full/obj16. Diese sind jweis als Dozent.gif, Student.gif, Hochschule.gif und Modul.gif gespeichert. Auch diese Bilder haben eine Größe von 16x16 Pixel. Diese Bilder können einfach durch eigene Bilder ersetzt werden. es ist jedoch darauf zu achten das die neuen Bilder den gleichen entsprchenden Dateinamen haben.
 
 # Zusammenfassung
+Eclipse Sirius ist ein mächtiges Framework um Modellierungswerkzeuge zu erstellen. Es bietet nicht nur die Möglichkeit eine Domäne grafisch durch die Unterstützung von Diagrammen, Tabellen, Matrizen oder Bäumen darzustellen. Sondern auch einen eigenen konreten Blick auf diese definiert Domäne zu werfen, sie besser zu verstehen und in ihr zu arbeiten. Die Erstellung eigener Node oder Edge Creations hilft dem Benutzer die Modellierung einer Domäne in kürzester Zeit vorzunehemen. Obwohl das Beispiel in dieser Seminararbeit relativ simplet gehalten wurde, kann mit Eclispe Sirius eine sehr spezielle und komplexe Domäne, auf eine einafche und leicht Veständlicher Art und Weise grafisch dargestellt werden. Das Schwierigste bei der Erstellung einer solchen Entwicklungsumgebung ist sehr wahrscheinlich die Erstellung des Metamodells. Da dies die Grundlage der konkreten Modelle ist. Das zusammen bauen der Entwicklungswerkzeuge ist zum Teil nur ein Zusammenbasteln und Konfigurieren von vorgefertigeten Elementen. Was ein großer Vorteil für den Beutzer ist. So kann dieser sich voll und ganz auf die Spezifikation der Domäne fokusieren.
 
 # Literatur
 
