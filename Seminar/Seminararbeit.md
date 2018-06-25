@@ -135,30 +135,28 @@ Nun könne wir uns der Erstellung der grafischen Darstellung der Studenten, Doze
 * bild von nodes mit squares
 
 Als nächstes folgt die Erstellung der grafischen Dartstellung der Beziehungen zwischen den Objekten. Die Edges oder auch zu deutsch Kanten werden ähnlich wie die Nodes erstellt. Auch sie werden über Rechtsklick auf den Dafault Layer, dann New Diagramm Element->Realtion Based Edge, hinzugefügt. Die erste Kante bekomment die Id "ModulToStudentEdge". Sie stellt die Beziehung zwischen einem Modul und einem Studenten grafisch dar. Für das Source Mapping wird der Modul-Node und für das Target Mapping der Student-Node eingestellt. Das Source Mapping bestimmt, von wlchem Objekt aus die Kante beginnt. Das Target Mapping bestimmt hingegen das Ziel der Kante. Zu letzt geben wir für die Target Finder Expression den Wert "feature:student" an. Damit die Kante in dem Diagramm grafisch dargetstellt werden kann, wird ihr ein Style hinzugefügt. Dies geschieht ähnlich, wie das Hinzufügen eines Squares bei einem Node. Für den Style wird ein Edge Style verwendet. Die Einzige Konfigurationsänderung ist, dass die Farbe der Kante auf "red" einegestellt wird. Dieser Ablauf wird für folgende Kanten mit den entsprechenden Werten wiederholt:
-*   Kantenname: "StudentToModulEdge"
-    Source Mapping: StudentNode
-    Target Mapping: ModulNode
-    Target Finder Expression: "feature:modul"
+*   Kantenname: "StudentToModulEdge"<br>
+    Source Mapping: StudentNode<br>
+    Target Mapping: ModulNode<br>
+    Target Finder Expression: "feature:modul"<br>
     Edge Style Color: green
-*   Kantenname: "DozentToModulEdge"
-    Source Mapping: DozentNode
-    Target Mapping: ModulNode
-    Target Finder Expression: "feature:modul"
+*   Kantenname: "DozentToModulEdge"<br>
+    Source Mapping: DozentNode<br>
+    Target Mapping: ModulNode<br>
+    Target Finder Expression: "feature:modul"<br>
     Edge Style Color: gray
-*   Kantenname: "ModulToDozentEdge"
-    Source Mapping: ModulNode
-    Target Mapping: DozentNode
-    Target Finder Expression: "feature:dozent"
+*   Kantenname: "ModulToDozentEdge"<br>
+    Source Mapping: ModulNode<br>
+    Target Mapping: DozentNode<br>
+    Target Finder Expression: "feature:dozent"<br>
     Edge Style Color: orange
 
+Um das Diagramm zu testen wird dem zuvor erstellten Modeling Project eine Viewpoint Selection hinzugefügt. Über einen Rechtsklick auf das Projekt Fachhochschule_Dortmund wird dann über Viewpoint Selection der Viewpoint "hochschule" ausgewählt und mit OK bestätigt. Damit dem Hochschul Modell ein Diagramm hinzugefügt wird, muss durch ein Rechtsklick auf Hochschule Fachhochschule Dortmund->New Representation->new Hochschul Diagramm das entsprechende Diagramm aus dem Viewpoint ausgewählt werden. Darauf hin wird automatisch ein Diagramm erstellt und in der Oberfläche der Entwicklungsumgebung angezeigt.
+* Bild von fertigen Modell
 
+### Entwicklung grafischer Modellierungswerkzeuge
+Da es beider Erstellung eines solchen Modelierungswerkzeuges auch sinvoll ist, dass aus Diagramm heraus neue Objekte hinzugefügt werden können, werden zusätzliche Werkzeuge entwickelt. Diese Werkzeuge könne dann von den Benutzern eingesetzt werden, um z.B. einen neuen Studenten oder ein neues Modul, so wie einen Dozenten zu erstellen. 
 
-### Entwicklung grafischer Erstellungswerkzeuge
- 
-dann in neuer workbanch die konkreten projekte mit dem viewpoint projekt
-dann die objekte erstellen
-dann die grafischen aspekte erstellen
-dann die cration tools
 
 ### MDSD Workflow
 ### MDA Workflow
