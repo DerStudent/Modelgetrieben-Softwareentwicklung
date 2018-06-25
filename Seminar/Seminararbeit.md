@@ -96,7 +96,9 @@ Ein Viewpoint, zu Deutsch Aussichtspunkt, kapselt eine bestimmte Teil der Präse
 # Realisierung und Verwendung
 Im nachfolgenden Teil der Seminararbeit wird die Verwendung von Eclipse Sirius und die Realisierung einer eigenen Entwicklungsumgebung, zum Erstellen von grafischen Modellen, beschrieben. Dazu wird an Hand eines konkreten Beispiels jeder Schritt einzeln erklärt. Am Anfang wird ein Metamodel erstellt, welches die Domäne abbildet. Aufbauend auf dem Metamodel wird in einer eigenen Entwicklungsumgebung ein konkretes Model erstellt. Zum Schluss wird noch die Erstellung eigener Modelierungswerkzeuge, zum Hinzufügen von Objekten und deren Beziehungen zueinander, erklärt. 
 
-## Beispiele
+## Erstellung des Metamodells
+Zu nächst wir ein neues Modeling Project angelegt, welches unter dem Namen "fh.de.mdsd.example.hochschule" abgespeichert wird. Innerhalb dieses Projekts wird das Metamodell erstellt. Dieses Metamodell wird die Grundlage der später erstellten grafischen Dartsellungen und Modellierungswerkzeuge sein.
+
 Das gewählte Beispiel beschreibt die Domäne einer Hochschule. Neben der Hochschule gibt es Personen, die entweder ein Dozent oder ein Student sind. Des Weiteren gibt es Module. In der nachfolgen Abbildung sind die einzelnen Klassen im Metamodel aufgeführt.
 * bild mit klassen aus metamodel
 
@@ -111,7 +113,16 @@ Sobald die Erstellung des Metamodells abgeschlossen ist kann daraus Programmcode
 * bild von generiertem code
 
 
+Wurde die Einstellen einer neuen Run-Configuration vorgenommen, kann durch das Klicken auf den Run-Button eine neue Entwicklungsumgebung gestartet werden. In dieser Entwicklungsumgebeung ist es nun möglich Modelle zu erzeugen, zu bearbeiten und neue Modelierungswerkzeuge zu erstellen. Bevor mit der Bearebitung von Modellen und die Erstellung von Modellierungswerkzeugen begonnen werden kann, muss erst ein konkretes Abbild der Domäne erstellt werden. Dazu wird innerhalb der neu gestarteten ENtwicklungsumgebung ein ebenfalls ein neues Modeling Projekt erstellt, welches Fachhochschule_Dortmung genannt wird. Ist dieses Projekt erstellt muss durch ein Rechtsklick auf das Projekt ein neues Hochschul Modell erstellt werden. Diese ist nach dem Rechtsklick unter New->Other->Example EMF Model Creation Wizards->Hochschule Model zu finden. Diese Modell enhält später die konkreten Objekte, welche in der Domäne der Hochschule vohanden sein werden. Dort werden dann die Studenten, Dozenten und Module gespeichert, welche von den Benutzern erstellt werden. Nach dem Auswählen des Hochschul Modells muss angegeben werden, welches Objekt der Domäne zunächst erstellt werden soll. Hier wird die Hochschule ausgewählt. Und der Erstellungsprozess kann mit dem Klick auf Finish beendet werden.
+* bild von projekt erstellung
 
+### Erstellung der Objekte
+Nun kann mit der Erstellung der einzelnen Objekte innerhalb der Hochschule begonnen werden. Zu nächst wird ein Student erstellt. Dies kann durch den Rechtsklick auf das erstellte Hochschulobjekt und dann über New Child->Student erreicht werden. Das Erstellen von Dozenten und Mdulen läuft äquivalent zur Erstellunf von Studenten ab, nur das hier jeweils Dozent bzw. Modul gewählt werden muss. Nach der Erstellung von einem Student, zwei Dozenten und zwei Modulen, kann mit der Bearbeitung der Attribute begonnen werden. Der Student erhält als Wert für das Attribut Name "Denis" und als Wert für das Attribut Adresse "Lünen". Für das Attribut Matrikelnr. wird der Wert "7095563" und für das Attribut Hochschule wird die "Hochschule Fachhochschule Dortmund" eingestellt. Die Module werden erst nach der Bearbeitung der Attibute der Module dem Student zugeordnet. Der erste Dozent erhält als Wert für das Attribut Name den Wert "Kamsties" und für das Attribut Titel den Wert "Prof. Dr.". Auch hier wird, wie bei dem Studenten, die "Hochschule Fachhochschule Dortmund" eingestellt. Da die Module noch keinen Bezeichner besitzen wird die Bearebitung dieser Attribute bei den Dozent nachgeholt. Der zweite Dozent erhält als Wert für das Attribut Name den Wert "Vollmer", für das Attribut Titel den Wert "Prof. Dr." und für die Hochschule wird auch hier "Hochschule Fachhochschule Dortmund" eingestellt. Das erste Modul erhält für das Attribut Bezeichnung dern Wert "Modellgetrieben Softwareentwicklung". Das zweite Modul bekommt für das Attribut Bezeichnung den Wert "Mobile App Engineering". Das Attribut Dozent wird für das erste Modul auf den Dozenten Kamsties eingestellt. Für das zweite Modul wird das Attribut DOzent auf den Dozenten Vollmer eingestellt. Zum Schluss werden jeweils das Attribut Hochschule für beide Module auf "Hochschule Fachhochschule Dortmund" festgelegt und die Module für das Attribut Modul des Studenten eingestellt.
+* bild von Objekten
+
+### Grafischen Darstellung von Objekten
+
+### Entwicklung grafischer Erstellungswerkzeuge
  
 dann in neuer workbanch die konkreten projekte mit dem viewpoint projekt
 dann die objekte erstellen
