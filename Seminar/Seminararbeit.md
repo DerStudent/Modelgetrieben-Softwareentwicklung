@@ -17,9 +17,8 @@ Diese Seminararbeit handelt von Eclipse Sirius und dessen Einordnung in die mode
 Ziel der Seminararbeit ist es ein Verständnis für Eclipse Sirus zu entwickeln. Und Eclipse Sirius in die modelgetrieben Softwareentwicklung einzuordnen, sowie zu verstehen wie modellgetriebene Softwareentwicklung mit Hilfe von Eclipse Sirius funktioniert.
 
 ## Modelle in der Softwareentwicklung
-In der Softwareentwicklung kommen Modelle in zwei verschiedenen Rollen zum Einsatz. Die erste Rolle von Modellen ist die Rolle von Modellen zur Dokumentation. Hierbei werden die Modelle eingesetzt, um Softwaresysteme zu dokumentieren. Da diese Modelle von einem Programmierer zu meist erst durch die Implementierung von Code zu einer lauffähigen Anwendung werden, haben diese nur eine unterstützende Funktion. Oft werden diese Modelle, von Programmierern, als Overhead empfunden. Ein weiterer Nachteil diese Modelle ist es, dass sie oft an die dynamischen Softwaresysteme angepasst werden müssen. Da die Verbindung zwischen diesen Modellen und einer Anwendung nur gedanklicher Natur ist, müssen die Veränderung manuell von Programmieren nachgehalten werden. 
-(Stahl/Völter MDSD s.10)
-Die Zweite Rolle von Modellen ist die Rolle von Modellen zur Entwicklung. Dabei sind die Modelle mit dem Code einer Anwendung gleichzusetzen. So stehen die Modelle und der Code in einer formalen Beziehung zueinander. Die Umsetzung der Modelle in Code erfolgt automatisiert. Für diese automatisierte Umsetzung werden bestimmte Compiler, Transformatoren oder Interpreter benutzt. Durch die enge Verbindung zwischen Modellen und Code lässt sich die Qualität und Wartbarkeit von Softwaresystemen verbessern.(Stahl/Völter MDSD s.11)
+In der Softwareentwicklung kommen Modelle in zwei verschiedenen Rollen zum Einsatz. Die erste Rolle von Modellen ist die Rolle von Modellen zur Dokumentation. Hierbei werden die Modelle eingesetzt, um Softwaresysteme zu dokumentieren. Da diese Modelle von einem Programmierer zu meist erst durch die Implementierung von Code zu einer lauffähigen Anwendung werden, haben diese nur eine unterstützende Funktion. Oft werden diese Modelle, von Programmierern, als Overhead empfunden. Ein weiterer Nachteil diese Modelle ist es, dass sie oft an die dynamischen Softwaresysteme angepasst werden müssen. Da die Verbindung zwischen diesen Modellen und einer Anwendung nur gedanklicher Natur ist, müssen die Veränderung manuell von Programmieren nachgehalten werden. [Vgl. @MDSD, Seite 10]
+Die Zweite Rolle von Modellen ist die Rolle von Modellen zur Entwicklung. Dabei sind die Modelle mit dem Code einer Anwendung gleichzusetzen. So stehen die Modelle und der Code in einer formalen Beziehung zueinander. Die Umsetzung der Modelle in Code erfolgt automatisiert. Für diese automatisierte Umsetzung werden bestimmte Compiler, Transformatoren oder Interpreter benutzt. Durch die enge Verbindung zwischen Modellen und Code lässt sich die Qualität und Wartbarkeit von Softwaresystemen verbessern.[Vgl. @MDSD, Seite 11]
 
 ## Modelgetriebene Softwareentwicklung
 Bei der modelgetriebenen Softwareentwicklung geht es darum, durch eine domänenspezifische Abstraktion der Realität, formale Modelle zu erstellen. Dieser formalen Modelle werden dann mit Hilfe von Compilern, Transformatoren oder Interpretern zu lauffähigem Code automatisiert umgesetzt. Diese automatisierte Umsetzung kann durch zwei mögliche Wege geschehen. Zum einen kann durch einen Generator aus den Modellen Code generiert werden, welcher dann in den nachfolgen Build-Prozess einfließt. Zum anderen können die Modelle durch einen entsprechenden Interpreter direkt zu einem lauffähigen Code interpretiert werden.
@@ -28,44 +27,44 @@ Oft werden die Modelle selbst durch Metamodelle beschrieben. Metamodelle werden 
 Das heißt, dass ein Modell dem festgelegten Alphabet und der im Metamodell definierten Ordnung entsprechen muss. Metamodelle beschreiben durch eine abstrakte Syntax und eine statische Semantik die formalen Modelle. So müssen die formalen Modelle sich strikt an die benannten Konstrukte aus dem Metamodel halten. Die konkrete Syntax ist hierbei irrelevant. Auch die Semantik ist im Metamodell vorgegeben. Das Metamodell beschreibt somit, nach welchen Regeln das Modell als gültig bzw. als valide anzusehen ist.
 Das Metametamodell beschreibt auf einer noch abstrakteren Ebene das Metamodell. Aber unter denselben Gegebenheiten, wie das Metamodell das Modell beschreibt. Somit kann gesagt werden, dass ein Metametamodel eine Instanz eines Metamodells ist.
 
-* hier bild von metamodel und metametamodel ein tragen
-
 Die Metaisierung von Modellen könnte theoretisch so weiter gesetzt werden. Jedoch macht dies wenig Sinn, da das Metametamodell das Fundament der Metamodelarchitektur darstellt. Es beschreibt sich somit selbst. 
 
 Zusammenfassen lässt sich die Metaisierung in einer 4-Ebenen-Metamodelarchitektur beschreiben. An oberster Stelle das Metametamodel, welches die Grundlagen für die Metamodellarchitektur bildet und die Sprache des Metamodells beschreibt. Darunter liegt das Metamodell, welches eine Instanz des Metametamodells ist und die Sprache des formalen Modells beschreibt. An zweit unterster Stelle liegt das eigentliche formale Modell, welches eine domänenspezifische Abstraktion der Realität ist. Zuletzt, an unterster Stelle, das Benutzer-Objekt, welches keine Abstraktion, sondern einer genaue Abbildung der Realität ist.
 
-* vier-ebenen metamodelarchitektur einfügen
 
 ## Ziele modellgetriebener Softwareentwicklung
 Es gibt eine Hand voll Gründe warum bei der Entwicklung von Software modelgetriebene Verfahren zum Einsatz kommen sollten:
+
 * Automation: 
 
-    Durch die Automation kann mit Hilfe von modelgetriebener Softwareentwicklung eine Verbesserung der Entwicklungsgeschwindigkeit erreicht werden. Aus formalen Modellen kann durch einen oder mehrere aufeinander folgende Transformationsschritte letztendlich lauffähiger Code erzeugt werden.(Stahl/Völter MDSD s.23)
+    Durch die Automation kann mit Hilfe von modelgetriebener Softwareentwicklung eine Verbesserung der Entwicklungsgeschwindigkeit erreicht werden. Aus formalen Modellen kann durch einen oder mehrere aufeinander folgende Transformationsschritte letztendlich lauffähiger Code erzeugt werden. [Vgl. @MDSD, Seite 22]
 
 * Wiederverwendbarkeit:
 
-    Einmal definierte Architekturen, Modellierungssprachen und Transformationen können im Sinne einer Software-Produktionsstraße zur Herstellung diverser Softwaresysteme verwendet werden. Dies führt zu einem höheren Grad der Wiederverwendung und macht Expertenwissen in Softwareform in der Breite verfügbar. (Stahl/Völter MDSD s.24)
+    Einmal definierte Architekturen, Modellierungssprachen und Transformationen können im Sinne einer Software-Produktionsstraße zur Herstellung diverser Softwaresysteme verwendet werden. Dies führt zu einem höheren Grad der Wiederverwendung und macht Expertenwissen in Softwareform in der Breite verfügbar. [Vgl. @MDSD, Seite 22]
 
 * Handhabbarkeit: 
 
     Ein weiteres wesentliches Potenzial ist die bessere Handhabbarkeit von Komplexität durch Abstraktion. Mit den Modellierungssprachen soll „Programmierung“ oder Konfiguration auf einer abstrakteren Ebene möglich werden. Die Modelle müssen dazu in einer möglichst problemorientierten Modellierungssprache ausgedrückt werden.
+    [Vgl. @MDSD, Seite 23]
 
 ## Domäne und domänenspezifische Sprache
 ### Domäne
-In der Softwareentwicklung beschreibt der Begriff der Domäne ein bestimmtes abzugenzerndes Gebiet. Eine Domäne kann sowohl fachlicher, als auch technischer Natur sein. In der modellgetrieben Softwareentwicklung werden diese Domänen meist durch ein entsprechendes Metamodel beschrieben. Das Metamodel definiert die Konzepte der Domäne. Fachliche Domänen ist zum Beispiel ein Webshop. Die technische Domäne ist dann zum Beispiel die Architektur des Softwaresystems.
+In der Softwareentwicklung beschreibt der Begriff der Domäne ein bestimmtes abzugenzerndes Gebiet. Eine Domäne kann sowohl fachlicher, als auch technischer Natur sein. In der modellgetrieben Softwareentwicklung werden diese Domänen meist durch ein entsprechendes Metamodel beschrieben. Das Metamodel definiert die Konzepte der Domäne. Fachliche Domänen ist zum Beispiel ein Webshop. Die technische Domäne ist dann zum Beispiel die Architektur des Softwaresystems.[Vgl. @KRLS.Voelter] 
 
 ### Domänenspezifische Sprache
-Als domänenspezifische Sprache versteht sich eine formale Sprache oder auch Modellierungssprache der Softwareentwicklung. Diese Sprache beschreibt die Konstrukte der entsprechenden Domäne. Dabei ist sie einfacher und prägnanter als herkömmliche Programmiersprachen. Um dies sicher zustellen nutzt die domänenspezifische Sprache das Vokabular der entsprechenden Domäne und eine Notation die Sachverhalte aus der Domäne in einer geeigneten Form darstellt. Die Notation der Sachverhalte einer Domäne erfolgt dabei in grafischer oder auch in textueller Darstellungsart.
+Als domänenspezifische Sprache versteht sich eine formale Sprache oder auch Modellierungssprache der Softwareentwicklung. Diese Sprache beschreibt die Konstrukte der entsprechenden Domäne. Dabei ist sie einfacher und prägnanter als herkömmliche Programmiersprachen. Um dies sicher zustellen nutzt die domänenspezifische Sprache das Vokabular der entsprechenden Domäne und eine Notation die Sachverhalte aus der Domäne in einer geeigneten Form darstellt. Die Notation der Sachverhalte einer Domäne erfolgt dabei in grafischer oder auch in textueller Darstellungsart.[Vgl. @KRLS.Voelter] 
 
 # Eclipse Sirius
 Auf der Eclipse Con 2013 wurde Eclipse Sirius erstmals, von Obeo, vorgestellt. Derzeit ist Eclipse Sirius ein Opensource Projekt der Eclipse Foundation. Eclipse Sirus ist ein Framework zur Entwickelung von domänenspezifischen Modellierungswerkzeugen. Dazu nutzt Eclipse Sirius das Eclipse Modeling Framwork(EMF) für das Erstellen und bearbeiten von Modellen, sowie das Grafical Modeling Framework(GMF) für die grafische Darstellung dieser Modelle. Durch die Verwendung von Eclipse Sirius ist es den Benutzern möglich verschiedene Modelle grafisch darzustellen. Grundlage dieser Modelle ist eine domänenspezifische Sprache(DSL). Diese domänenspezifische Sprache ist in Form eines Metamodels definiert.   
 
-# Konzept
+## Konzept
 Wie schon erwähnt ist die Grundlage für das Arbeiten mit Eclipse Sirius ein Metamodell. Durch die Erstellung des Metamodells ist es möglich Programmcode zu generieren. Dieser generierte Programmcode wird dann für die Ausführung einer neuen Entwicklungsumgebung genutzt. In der neuen Entwicklungsumgebung ist es den Benutzern möglich mit konkrete Modell zu arbeiten. Den Benutzern stehen dazu eine Menge von Eclipse-Editoren zur Verfügung um EMF Modelle erstellen, bearbeiten und visualisieren zu können. Mit Hilfe von Eclipse Sirius können die Benutzer nicht nur Diagramme, sondern auch Tabellen, Matrizen oder Bäume zu Visualisierung der Modelle erstellen.
 
-## Diagramme
+### Diagramme
 Die mit Eclipse Sirius erstellten Diagramme zeigen grafisch die Elemente der Modelle. Welche Elemente dargestellt werden und in welcher Art und Weise dies geschieht wird zuvor von den Benutzern angegeben. Die angegebenen Regeln definieren auch die Beziehungen zwischen den einzelnen Elementen der Modelle. Eine Beziehung kann sowohl als Kante zwischen zwei Elementen oder als ein Element, welches sich in einem weiteren Element befindet, dargestellt werden. Wenn ein Diagramm mit einem EMF Modell synchronisiert ist, wird es automatisch angepasst, sobald eine Änderung an den Darstellungsregeln vorgenommen wird. Damit die Benutzer ein Modell direkt aus dem Diagramm heraus bearbeiten können, muss der Ersteller der Entwicklungsumgebung eine bestimmte Menge von Bearbeitungswerkzeugen bereitstellen. Diese Bearbeitungswerkzeuge dienen dann dazu, dass die Benutzer neue Objekte oder Beziehungen erstellen können. Des Weiteren kann auch das Verhalten bei Eingaben durch die Benutzer oder klassische Aktionen, wie das Festhalten oder Loslassen von Objekten, definiert werden.
-Um den Benutzern zu unterstützen, die potenzielle Komplexität ihrer Modelle zu meistern, bietet Eclipse Sirius mehrere Mechanismen, um sich auf relevante Elemente zu fokussieren. 
+Um den Benutzern zu unterstützen, die potenzielle Komplexität ihrer Modelle zu meistern, bietet Eclipse Sirius mehrere Mechanismen, um sich auf relevante Elemente zu fokussieren.[Vgl. @WISirius]
+
 * Bedingtes Aussehen:
     
     Die grafische Darstellung kann abhängig von den Eigenschaften eines Objekts geändert werden. Zum Beispiel kann ein Objekt proportional zu dem Wert eines Attributs sein Größe oder Farbe in dem Diagramm verändern.
@@ -78,15 +77,15 @@ Um den Benutzern zu unterstützen, die potenzielle Komplexität ihrer Modelle zu
 
     Das Modell kann durch die Angabe von spezifizierten Regel validiert werden. Die Probleme, welche bei der Validierung auftauchen, werden in einer eigenen Übersicht aufgelistet. Das dazugehörige Objekt des Diagramms wird dabei farblich markiert. Für einige Probleme wird eine Schnell-Reparatur vorgeschlagen, um das Modell zu korrigieren.
 
-## Tabellen und Matrizen
+### Tabellen und Matrizen
 Modelle könne auch als Tabelle und Matrix dargestellt werden. Die erste Spalte der Tabelle enthält dabei das Objekt. In den darauf folgen Spalten werden die zum Objekt gehörenden Eigenschaften aufgelistet. In den Zellen stehen die entsprechenden Werte, welche für die Eigenschaften der Objekte angegeben werden. Die Benutzer können die Werte in den Zellen bearbeiten und neue Werte eintragen. Die Art der grafischen Darstellung kann auch, wie bei den Diagrammen schon beschrieben, von dem Ersteller der Entwicklungsumgebung definiert und geändert werden.
-Eine Matrix enthält zwei Listen von Objekten. Die erste Liste wird in der ersten Spalte, die andere Liste in der ersten Zeile abgebildet. Der Inhalt der Zellen beschreibt dabei das Zusammen spiel der beiden außenliegenden Objekte, einer jeden Liste.
+Eine Matrix enthält zwei Listen von Objekten. Die erste Liste wird in der ersten Spalte, die andere Liste in der ersten Zeile abgebildet. Der Inhalt der Zellen beschreibt dabei das Zusammen spiel der beiden außenliegenden Objekte, einer jeden Liste.[Vgl. @WISirius]
 
-## Bäume
-Die dritte und letzte Art der grafischen Darstellung sind Bäume. Dabei werden die Objekte eines Modells in hierarchischer Anordnung abgebildet. Wie bei den Diagrammen, Tabellen und Matrizen kann die Art der grafischen Darstellung von dem Ersteller der Entwicklungsumgebung definiert und geändert werden.
+### Bäume
+Die dritte und letzte Art der grafischen Darstellung sind Bäume. Dabei werden die Objekte eines Modells in hierarchischer Anordnung abgebildet. Wie bei den Diagrammen, Tabellen und Matrizen kann die Art der grafischen Darstellung von dem Ersteller der Entwicklungsumgebung definiert und geändert werden.[Vgl. @WISirius]
 
-## Viewpoints
-Ein Viewpoint, zu Deutsch Aussichtspunkt, kapselt eine bestimmte Teil der Präsentation eines Modells. Um es den Benutzern einfacher zu machen sich auf einen bestimmten Teil einer Domäne zu konzentrieren, werden Viewpoints benutzt. Innerhalb des Viewpoint sind die Art und Weise der grafischen Dartstellung, sowie das Verhalten bei Benutzereingaben definiert und gespeichert. Ein Modell kann somit durch verschiedene Viewpoints visualisiert werden. Jeder dieser Viewpoints kann sich dabei auf einen von Ersteller definierten, abgegrenzten Bereich des Modells fokussieren. 
+### Viewpoints
+Ein Viewpoint, zu Deutsch Aussichtspunkt, kapselt eine bestimmte Teil der Präsentation eines Modells. Um es den Benutzern einfacher zu machen sich auf einen bestimmten Teil einer Domäne zu konzentrieren, werden Viewpoints benutzt. Innerhalb des Viewpoint sind die Art und Weise der grafischen Dartstellung, sowie das Verhalten bei Benutzereingaben definiert und gespeichert. Ein Modell kann somit durch verschiedene Viewpoints visualisiert werden. Jeder dieser Viewpoints kann sich dabei auf einen von Ersteller definierten, abgegrenzten Bereich des Modells fokussieren.[Vgl. @WISirius] 
 
 
 # Realisierung und Verwendung
@@ -129,26 +128,37 @@ Nach dem Hinzufügen der Abhängigkeit beginnen wir die Erstellung des Diagramms
 
 ![Diagramm des Viewpoints mit Id und Domain Class](media/10_metamodel.png){#fig:diagrammViewpoint width=50%}
 
+#### Objekte im Diagramm
 Nun können wir uns der Erstellung der grafischen Darstellung der Studenten, Dozenten, Module und der Beziehungen zwischen den Objekten zu wenden. Unterhalb des erstellten Hochschul Diagramms befindet sich bereits ein Default Layer. Innerhalb dieses Layers werden die Definitionen für die Nodes, zu Deutsch Knoten, und der Edges, zu Deutsch Kanten, erstellt. Beginnen wir mit der Erstellung eines Studenten Nodes. Dazu fügen wir dem Default Layer, über Rechtsklick-> New Diagramm Element->Node, ein neuen Node hinzu. Der Student-Node erhält als Id den Wert "StudentNode", die Domain Class definieren wir als "hochschule::Student" und die für die Semantic Candidates Expression wird der Wert als "feature::person" definiert. Damit der Student in dem Diagramm auch angezeigt wird noch ein Square dem Node hinzugefügt. Dies erfolgt über einen rechtsklick auf den StudentNode->New Style->Square. Grundsätzlich ist für die Label Expression, also dem anzuzeigenden Namen des Objekts, "feature::name" angegeben. Bei Bedarf kann dieser Wert auch angepasst werden. Als Color für das Square wird "green" angegeben. Für die Höhe wird der Wert auf 5 und für die Breite auf 10 eingestellt. Ähnlich wie bei dem Student-Node verfahren wir bei der Erstellung des Dozenten-Node und dem Modul-Node. Der Unterschied ist jedoch, dass beim Dozenten-Node die Domain Class "hochschule::Dozent" und beim Modul-Node die Domain Class "hochschule::Modul" eingestellt wird. Auch diesen beiden Nodes fügen wir eine Square als Style hinzu. Der Dozent-Node erhält die Farbe Orange für das Square und der Modul-Node die Farbe Rot. Bei dem Square des Modul-Nodes wird für die Label Expression der Wert "feature:bezeichnung" eingetragen, damit der Name des Moduls angezeigt werden kann. 
 
 ![Erstellte Nodes mit Sqaures](media/14_node_modul_bezeichner.png){#fig:nodesspuares width=50%}
 
+#### Beziehungen im Diagramm
 Als nächstes folgt die Erstellung der grafischen Dartstellung der Beziehungen zwischen den Objekten. Die Edges oder auch zu deutsch Kanten werden ähnlich wie die Nodes erstellt. Auch sie werden über Rechtsklick auf den Default Layer, dann New Diagramm Element->Realtion Based Edge, hinzugefügt. Die erste Kante bekommet die Id "ModulToStudentEdge". Sie stellt die Beziehung zwischen einem Modul und einem Studenten grafisch dar. Für das Source Mapping wird der Modul-Node und für das Target Mapping der Student-Node eingestellt. Das Source Mapping bestimmt, von welchem Objekt aus die Kante beginnt. Das Target Mapping bestimmt hingegen das Ziel der Kante. Zu Letzt geben wir für die Target Finder Expression den Wert "feature:student" an. Damit die Kante in dem Diagramm grafisch dargestellt werden kann, wird ihr ein Style hinzugefügt. Dies geschieht ähnlich, wie das Hinzufügen eines Squares bei einem Node. Für den Style wird ein Edge Style verwendet. Die Einzige Konfigurationsänderung ist, dass die Farbe der Kante auf "red" eingestellt wird. Dieser Ablauf wird für folgende Kanten mit den entsprechenden Werten wiederholt:
-*   Kantenname: "StudentToModulEdge"<br>
-    Source Mapping: StudentNode<br>
-    Target Mapping: ModulNode<br>
-    Target Finder Expression: "feature:modul"<br>
+
+*   
+    Kantenname: "StudentToModulEdge";
+    Source Mapping: StudentNode;
+    Target Mapping: ModulNode;
+    Target Finder Expression: "feature:modul";
     Edge Style Color: green
-*   Kantenname: "DozentToModulEdge"<br>
-    Source Mapping: DozentNode<br>
-    Target Mapping: ModulNode<br>
-    Target Finder Expression: "feature:modul"<br>
+
+
+*   
+    Kantenname: "DozentToModulEdge";
+    Source Mapping: DozentNode;
+    Target Mapping: ModulNode;
+    Target Finder Expression: "feature:modul";
     Edge Style Color: gray
-*   Kantenname: "ModulToDozentEdge"<br>
-    Source Mapping: ModulNode<br>
-    Target Mapping: DozentNode<br>
-    Target Finder Expression: "feature:dozent"<br>
+
+
+*   
+    Kantenname: "ModulToDozentEdge";
+    Source Mapping: ModulNode;
+    Target Mapping: DozentNode;
+    Target Finder Expression: "feature:dozent";
     Edge Style Color: orange
+
 
 ![Erstellte Beziehungen zwischen den Objekten](media/16_edges.png){#fig:edges width=50%}
 
@@ -156,56 +166,67 @@ Um das Diagramm zu testen wird dem zuvor erstellten Modeling Project eine Viewpo
 
 ![Vollständiges Diagramm mit Objekten und Beziehungen](media/15_erstes_Diagramm.png){#fig:firstdiagramm width=80%}
 
+
+
+
+
 ### Entwicklung grafischer Modellierungswerkzeuge
 Da es beider Erstellung eines solchen Modellierungswerkzeuges auch sinnvoll ist, dass aus Diagramm heraus neue Objekte hinzugefügt werden können, werden zusätzliche Werkzeuge entwickelt. Diese Werkzeuge könne dann von den Benutzern eingesetzt werden, um z.B. einen neuen Studenten oder ein neues Modul, so wie einen Dozenten zu erstellen. Des Weiteren wird ein Werkzeug entwickelt, welches den Benutzern die Möglichkeit bietet, zwischen den Objekten Beziehungen zu erstellen.
 
+#### Objekterstellung
 Für die Entwicklung der genannten Werkzeuge wird zunächst eine Sektion für die Werkzeuge erstellt. Diese befindet sich, wie auch die Nodes und Edges, unterhalb des Default Layers. Diese Section wird über einen Rechtsklick auf den Default Layer->New Tool->Section angelegt. Innerhalb dieser Sektion wird, über Rechtsklick->New Element Creation->Node Creation, eine neues Werkzeug zum Anlegen von Nodes erstellt. Dieses Werkzeug bekommt die Id "createStudent" und als Node Mapping wird StudentNode eingetragen. Unterhalb der Node Creation befindet sich eine Begin Action. Dieser Action wird, über Rechtsklick->New Operation->Change Context, ein Change Context hinzugefügt. Für die Browse Expression wird der Wert "var:container" angeben. Diese Expression sorgt dafür das wir mit dem im Context definierten Container, welcher hier die Hochschulinstanz ist, arbeiten können. Innerhalb dieses Change Context wird, über Rechtsklick->New Operation-Create Instance, eine neue Create Instance erzeugt. Diese Create Instance wird für den Reference Name mit dem Wert "person" und für den Type Name mit dem Wert "hochschule::Student" definiert. Wiederum die Create Instance bekommt, über Rechtsklick->New Operation->Set, eine Set Operation hinzugefügt. Die Set Operation erhält für den Feature Name den Wert "name" und für die Value Expression wir der Wert "aql:'student'+container.person->filter(hochschule::Student)->size()" eingetragen. Der Wert der Value Expression sorgt dafür, dass bei dem Hinzufügen eines weiteren Studenten der angezeigte Name die Zeichenkette "student" plus die Anzahl aller vorhandenen Studenten im Diagramm angehängt bekommt. So erhält der nächste hinzugefügte Student den Namen "student2", bei einem weitern "student3" und bei noch einem weitern "student4".
+
+![Node Creation "createStudent" mit Id und Node Mapping](media/18_createStudent.png){#fig:nodecreat width=30%}
+
+
+![Create Instance mit Reference Name und Type Name](media/19_createInstance.png){#fig:instacreat width=30%}
+
+
+![Set Operation mit Feature Name und Value Expression](media/20_setName.png){#fig:setname width=30%}
+
 Für die Erstellung weiterer Nodes sind im Folgenden die Werte, für die Erstellung des Werkzeuges, aufgelistet.
+
 *   Node Creation:
-    *   Id: "createDozent"<br>
+    1.  Id: "createDozent"<br>
         Node Mapping: DozentNode
-    * Change Context: <br>
+    2.  Change Context: <br>
         Browse Expression: "var:container"
-    * Create Instace <br>
+    3.  Create Instace <br>
         Reference Name: "person"<br>
         Type Name: "hochschule::Dozent"
-    * Set Operation:<br>
+    4.  Set Operation:<br>
         Feature Name: "name"<br>
         Value Expression: "aql:'dozent'+container.person->filter(hochschule::Dozent)->size()"
 
 *   Node Creation:
-    *   Id: "createModul"<br>
+    1.  Id: "createModul"<br>
         Node Mapping: ModulNode
-    * Change Context:<br>
+    2.  Change Context:<br>
         Browse Expression: "var:container"
-    * Create Instace: <br>
+    3.  Create Instace: <br>
         Reference Name: "modul"<br>
         Type Name:  "hochschule::Modul"
-    * Set Operation:<br>
+    4.  Set Operation:<br>
         Feature Name: "bezeichnung"<br>
         Value Expression: "aql:'modul'+container.modul->filter(hochschule::Modul)->size()"
 
 
 
-![Node Creation "createStudent" mit Id und Node Mapping](media/18_createStudent.png){#fig:nodecreat width=30%}
+#### Beziehungserstellung
+Da es zwischen den Objekten auch Beziehungen gibt, muss es auch eine Möglichkeit geben diese durch ein Modellierungswerkzeug zu erstellen. Die Erstellung dieser Werkzeuge läuft ähnlich, wie die Erstellung der Node Creation, ab. Zu nächst wird der Section ein Edge Creation Tool, über Rechtsklick auf Section->New Element Creation-> Edge Creation, hinzugefügt. Diese Edge Creation bekommt als Id den Wert "setStudentToModul" und für das Edge Mapping wird die Egde StudentToModul ausgewählt. Auch hier wird in der Begin Action ein Change Context erstellt. Der Change Context erhält für die Browse Expression den Wert "var:source" und nicht "var:target", wie bei der Erstellung der Node Creation. Dem Change Context wiederum wird direkt eine Set Operation hinzugefügt. Die Set Operation hat für den Feature Name den Wert "modul" und für die Value Expression den Wert "var:target". Äquivalent zu der Erstellung des "createStudentToModul" verläuft die Erstellung des "createDozentToModul" Werkzeuges ab. Hierbei ist zu beachten das an Stelle des StudentToModulEdge die DozentToModulEdge verwendet wird. Die Restlichen Werte werden, wie bei der Erstellung der "setStudentToModul" Edge Creation, verwendet.
 
-![Create Instance mit Reference Name und Type Name](media/19_createInstance.png){#fig:instacreat width=30%}
+![Edge cration "setStudentToModul" mit Id und Edge Mapping](media/22_createEdge.png){#fig:createEdge width=35%}
 
-![Set Operation mit Feature Name und Value Expression](media/20_setName.png){#fig:setname width=30%}
+![Change Context mit Browse Expression](media/23_changecontext.png){#fig:cdcontext width=35%}
+
+![Set Operation mit Feature Name und Value Expression](media/24_setModul.png){#fig:setModul width=35%}
 
 
 
-Da es zwischen den Objekten auch Beziehungen gibt, muss es auch eine Möglichkeit geben diese durch ein Modellierungswerkzeug zu erstellen. Die Erstellung dieser Werkzeuge läuft ähnlich, wie die Erstellung der Node Creation, ab. Zu nächst wird der Section ein Edge Creation Tool, über Rechtsklick auf Section->New Element Creation-> Edge Creation, hinzugefügt. Diese Edge Creation bekommt als Id den Wert "setStudentToModul" und für das Edge Mapping wird die Egde StudentToModul ausgewählt. Auch hier wird in der Begin Action ein Change Context erstellt. Der Change Context erhält für die Browse Expression den Wert "var:source" und nicht "var:target", wie bei der Erstellung der Node Creation. Dem Change Context wiederum wird direkt eine Set Operation hinzugefügt. Die Set Operation hat für den Feature Name den Wert "modul" und für die Value Expression den Wert "var:target".
 
-![Edge cration "setStudentToModul" mit Id und Edge Mapping](media/22_createEdge.png){#fig:createEdge width=30%}
-
-![Change Context mit Browse Expression](media/23_changecontext.png){#fig:cdcontext width=30%}
-
-![Set Operation mit Feature Name und Value Expression](media/24_setModul.png){#fig:setModul width=30%}
-
+#### Anzeige der Modellierungswerkzeuge
 
 Nun da die Erstellung der Modellierungswerkzeuge abgeschlossen ist, können die Benutzer direkt Objekte und Beziehungen erstellen. Diese Modellierungswerkzeuge werden standardmäßig rechts neben dem Diagramm angezeigt.
-
 
 ![Erstellte Werkzeuge im Editor](media/26_createDozentMOdul_done.png){#fig:werkzeuge width=50%}
 
