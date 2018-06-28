@@ -96,37 +96,42 @@ Im nachfolgenden Teil der Seminararbeit wird die Verwendung von Eclipse Sirius u
 Zu nächst wir ein neues Modeling Project angelegt, welches unter dem Namen "fh.de.mdsd.example.hochschule" abgespeichert wird. Innerhalb dieses Projekts wird das Metamodell erstellt. Dieses Metamodell wird die Grundlage der später erstellten grafischen Darstellungen und Modellierungswerkzeuge sein.
 
 Das gewählte Beispiel beschreibt die Domäne einer Hochschule. Neben der Hochschule gibt es Personen, die entweder ein Dozent oder ein Student sind. Des Weiteren gibt es Module. In der nachfolgen Abbildung sind die einzelnen Klassen im Metamodel aufgeführt.
-* bild mit klassen aus metamodel
 
 Eine Hochschule besteht aus Personen und Modulen. Zu jedem Modul gibt es einen oder mehrere Dozenten und Null bis mehrere Studenten. Ein Dozent kann ein beliebig viele Module haben. Jedoch kann ein Student null bis mehrere Module haben. Sowohl Student als auch Dozent haben eine Hochschule, zu der sie gehören. Die Hochschule besitzt als Attribute einen "name" und eine "addresse". Beide Attribute sind vom Datentype EString. Die abstrakte Oberklasse Person hat ein "name" Attribut, welches auch vom Datentyp EString ist. Der Student besitz darüber hinaus noch eine "matrikelnr" Attribut vom Datentyp EInt. Der Dozent hat ein "titel" Attribut vom Datentyp EString. Das Modul hat ein "bezeichnung" Attribut vom Datentyp EString.
-* bild von beziehungen
+
+![Metamodell der Domäne mit Attributen und Beziehungen](media/02_Diagramm_Beziehungen.png){#fig:metaBezi width=50%}
 
 
 ## Workflow
 
 Sobald die Erstellung des Metamodells abgeschlossen ist kann daraus Programmcode generiert werden. Durch einen Rechtsklick in die Oberfläche des Metamodells öffnet sich ein Kontextmenü. In dem Kontextmenü muss der Punkt "Generate -> All" ausgewählt werden. Durch diese Aktion werden mehrere JAVA-Klassen und zwei weitere Projekte generiert.
-* bild von generiertem code
 
-Wurde die Einstellen einer neuen Run-Configuration vorgenommen, kann durch das Klicken auf den Run-Button eine neue Entwicklungsumgebung gestartet werden. In dieser Entwicklungsumgebung ist es nun möglich Modelle zu erzeugen, zu bearbeiten und neue Modellierungswerkzeuge zu erstellen. Bevor mit der Bearbeitung von Modellen und die Erstellung von Modellierungswerkzeugen begonnen werden kann, muss erst ein konkretes Abbild der Domäne erstellt werden. Dazu wird innerhalb der neu gestarteten Entwicklungsumgebung ein ebenfalls ein neues Modeling Projekt erstellt, welches Fachhochschule_Dortmung genannt wird. Ist dieses Projekt erstellt muss durch ein Rechtsklick auf das Projekt ein neues Hochschul Modell erstellt werden. Diese ist nach dem Rechtsklick unter New->Other->Example EMF Model Creation Wizards->Hochschule Model zu finden. Diese Modell enthält später die konkreten Objekte, welche in der Domäne der Hochschule vorhanden sein werden. Dort werden dann die Studenten, Dozenten und Module gespeichert, welche von den Benutzern erstellt werden. Nach dem Auswählen des Hochschul Modells muss angegeben werden, welches Objekt der Domäne zunächst erstellt werden soll. Hier wird die Hochschule ausgewählt. Und der Erstellungsprozess kann mit dem Klick auf Finish beendet werden.
-* bild von projekt erstellung
+![Generierter Code und generierte Projekte](media/03_Generierte_Packete.png){#fig:genPackete width=50%}
+
+Wurde die Einstellung einer neuen Run-Configuration vorgenommen, kann durch das Klicken auf den Run-Button eine neue Entwicklungsumgebung gestartet werden. In dieser Entwicklungsumgebung ist es nun möglich Modelle zu erzeugen, zu bearbeiten und neue Modellierungswerkzeuge zu erstellen. Bevor mit der Bearbeitung von Modellen und die Erstellung von Modellierungswerkzeugen begonnen werden kann, muss erst ein konkretes Abbild der Domäne erstellt werden. Dazu wird innerhalb der neu gestarteten Entwicklungsumgebung ein ebenfalls ein neues Modeling Projekt erstellt, welches Fachhochschule_Dortmung genannt wird. Ist dieses Projekt erstellt muss durch ein Rechtsklick auf das Projekt ein neues Hochschul Modell erstellt werden. Diese ist nach dem Rechtsklick unter New->Other->Example EMF Model Creation Wizards->Hochschule Model zu finden. Diese Modell enthält später die konkreten Objekte, welche in der Domäne der Hochschule vorhanden sein werden. Dort werden dann die Studenten, Dozenten und Module gespeichert, welche von den Benutzern erstellt werden. Nach dem Auswählen des Hochschul Modells muss angegeben werden, welches Objekt der Domäne zunächst erstellt werden soll. Hier wird die Hochschule ausgewählt. Und der Erstellungsprozess kann mit dem Klick auf Finish beendet werden.
+
+![Auswahl des Metamodelles für die Erstellung eines neuen Projektes](media/04_Neues_Projekt.png){#fig:newProject width=80%}
 
 ### Erstellung der Objekte
 Nun kann mit der Erstellung der einzelnen Objekte innerhalb der Hochschule begonnen werden. Zu nächst wird ein Student erstellt. Dies kann durch den Rechtsklick auf das erstellte Hochschulobjekt und dann über New Child->Student erreicht werden. Das Erstellen von Dozenten und Modulen läuft äquivalent zur Erstellung von Studenten ab, nur das hier jeweils Dozent bzw. Modul gewählt werden muss. Nach der Erstellung von einem Studenten, zwei Dozenten und zwei Modulen, kann mit der Bearbeitung der Attribute begonnen werden. Der Student erhält als Wert für das Attribut Name "Denis" und als Wert für das Attribut Adresse "Lünen". Für das Attribut Matrikelnr. wird der Wert "7095563" und für das Attribut Hochschule wird die "Hochschule Fachhochschule Dortmund" eingestellt. Die Module werden erst nach der Bearbeitung, der Attribute der Module, dem Studenten zugeordnet. Der erste Dozent erhält als Wert für das Attribut Name den Wert "Kamsties" und für das Attribut Titel den Wert "Prof. Dr.". Auch hier wird, wie bei dem Studenten, die "Hochschule Fachhochschule Dortmund" eingestellt. Da die Module noch keinen Bezeichner besitzen wird die Bearbeitung dieser Attribute bei den Dozenten nachgeholt. Der zweite Dozent erhält als Wert für das Attribut Name den Wert "Vollmer", für das Attribut Titel den Wert "Prof. Dr." und für die Hochschule wird auch hier "Hochschule Fachhochschule Dortmund" eingestellt. Das erste Modul erhält für das Attribut Bezeichnung deren Wert "Modellgetrieben Softwareentwicklung". Das zweite Modul bekommt für das Attribut Bezeichnung den Wert "Mobile App Engineering". Das Attribut Dozent wird für das erste Modul auf den Dozenten Kamsties eingestellt. Für das zweite Modul wird das Attribut Dozent auf den Dozenten Vollmer eingestellt. Zum Schluss werden jeweils das Attribut Hochschule für beide Module auf "Hochschule Fachhochschule Dortmund" festgelegt und die Module für das Attribut Modul des Studenten eingestellt.
-* bild von Objekten
+
+![Objekte des Diagrammes](media/06_Neue_Icons.png){#fig:objekte width=50%}
 
 ### Grafische Darstellung der Objekte 
 Für die Erstellung der grafischen Darstellung der Objekte wird ein Viewpoint Specification Project angelegt. Dieses Projekt enthält dann alle Informationen über die grafische Darstellung der Objekte innerhalb des Diagramms und der Erstellungswerkzeuge für neue Objekte. Für den Namen des Viewpoint Specification Projects wählen wir "hochschule.design". Durch das Klicken auf Finish wird die Erstellung eines Viewpoints beendet. Daraufhin öffnet sich in der Entwicklungsumgebung eine neue Oberfläche. Dort ist ein Viewpoint für die Hochschule vorhanden. Dieser wird von uns nun in "Hochschule" umbenannt.
-* bild von viewpoint
+
+![Viewpoint mit der Id Hochschule](media/08_Viewpoint.png){#fig:viewpoint width=50%}
 
 Bevor wir mit der Erstellung der grafischen Darstellung der Elemente des Diagramms fortfahren können, werden erst die Dependencies, zu Deutsch Abhängigkeiten, für das Modell eingestellt. Hierbei wird in der MANIFEST.MF Datei das zuvor erstellte Metamodel-Projekt eingebunden.
 Über den Button Add öffnet sich das Suchfenster, wo wir durch die Eingabe des Wortes "hochschule" nach dem Metamodel-Projekt suchen. Das gefundene Projekt wird dann durch das Klicken des OK-Buttons zu den Anhängigkeiten hinzugefügt.
-* bild von dependencies
 
 Nach dem Hinzufügen der Abhängigkeit beginnen wir die Erstellung des Diagramms. In der Oberfläche, wo der Viewpoint Hochschule definiert wurde, fügen wir durch einen Rechtsklick auf den Viewpoint Hochschule ein neues Diagramm hinzu. Als Metamodell wählen wir das von uns definierte Hochschul Metamodel. Dieses Diagramm erhält als ID "Hochschule Diagramm". Als wert für das Attribut Domain Class wird "hochschule::Hoschule" eingetragen. Hier bei ist auf die korrekte Groß- und Kleinschreibung zu achten, da es sonst zu Komplikationen kommen kann. Des Weiteren ist darauf zu achten das bei Initialization ein Hacken gesetzt ist, da das Diagramm sonst nicht automatisch angezeigt wird. 
-* bild von hochschul diagramm 
+
+![Diagramm des Viewpoints mit Id und Domain Class](media/10_metamodel.png){#fig:diagrammViewpoint width=50%}
 
 Nun können wir uns der Erstellung der grafischen Darstellung der Studenten, Dozenten, Module und der Beziehungen zwischen den Objekten zu wenden. Unterhalb des erstellten Hochschul Diagramms befindet sich bereits ein Default Layer. Innerhalb dieses Layers werden die Definitionen für die Nodes, zu Deutsch Knoten, und der Edges, zu Deutsch Kanten, erstellt. Beginnen wir mit der Erstellung eines Studenten Nodes. Dazu fügen wir dem Default Layer, über Rechtsklick-> New Diagramm Element->Node, ein neuen Node hinzu. Der Student-Node erhält als Id den Wert "StudentNode", die Domain Class definieren wir als "hochschule::Student" und die für die Semantic Candidates Expression wird der Wert als "feature::person" definiert. Damit der Student in dem Diagramm auch angezeigt wird noch ein Square dem Node hinzugefügt. Dies erfolgt über einen rechtsklick auf den StudentNode->New Style->Square. Grundsätzlich ist für die Label Expression, also dem anzuzeigenden Namen des Objekts, "feature::name" angegeben. Bei Bedarf kann dieser Wert auch angepasst werden. Als Color für das Square wird "green" angegeben. Für die Höhe wird der Wert auf 5 und für die Breite auf 10 eingestellt. Ähnlich wie bei dem Student-Node verfahren wir bei der Erstellung des Dozenten-Node und dem Modul-Node. Der Unterschied ist jedoch, dass beim Dozenten-Node die Domain Class "hochschule::Dozent" und beim Modul-Node die Domain Class "hochschule::Modul" eingestellt wird. Auch diesen beiden Nodes fügen wir eine Square als Style hinzu. Der Dozent-Node erhält die Farbe Orange für das Square und der Modul-Node die Farbe Rot. Bei dem Square des Modul-Nodes wird für die Label Expression der Wert "feature:bezeichnung" eingetragen, damit der Name des Moduls angezeigt werden kann. 
-* bild von nodes mit squares
+
+![Erstellte Nodes mit Sqaures](media/14_node_modul_bezeichner.png){#fig:nodesspuares width=50%}
 
 Als nächstes folgt die Erstellung der grafischen Dartstellung der Beziehungen zwischen den Objekten. Die Edges oder auch zu deutsch Kanten werden ähnlich wie die Nodes erstellt. Auch sie werden über Rechtsklick auf den Default Layer, dann New Diagramm Element->Realtion Based Edge, hinzugefügt. Die erste Kante bekommet die Id "ModulToStudentEdge". Sie stellt die Beziehung zwischen einem Modul und einem Studenten grafisch dar. Für das Source Mapping wird der Modul-Node und für das Target Mapping der Student-Node eingestellt. Das Source Mapping bestimmt, von welchem Objekt aus die Kante beginnt. Das Target Mapping bestimmt hingegen das Ziel der Kante. Zu Letzt geben wir für die Target Finder Expression den Wert "feature:student" an. Damit die Kante in dem Diagramm grafisch dargestellt werden kann, wird ihr ein Style hinzugefügt. Dies geschieht ähnlich, wie das Hinzufügen eines Squares bei einem Node. Für den Style wird ein Edge Style verwendet. Die Einzige Konfigurationsänderung ist, dass die Farbe der Kante auf "red" eingestellt wird. Dieser Ablauf wird für folgende Kanten mit den entsprechenden Werten wiederholt:
 *   Kantenname: "StudentToModulEdge"<br>
@@ -145,8 +150,11 @@ Als nächstes folgt die Erstellung der grafischen Dartstellung der Beziehungen z
     Target Finder Expression: "feature:dozent"<br>
     Edge Style Color: orange
 
+![Erstellte Beziehungen zwischen den Objekten](media/16_edges.png){#fig:edges width=50%}
+
 Um das Diagramm zu testen wird dem zuvor erstellten Modeling Project eine Viewpoint Selection hinzugefügt. Über einen Rechtsklick auf das Projekt Fachhochschule_Dortmund wird dann über Viewpoint Selection der Viewpoint "hochschule" ausgewählt und mit OK bestätigt. Damit dem Hochschul Modell ein Diagramm hinzugefügt wird, muss durch ein Rechtsklick auf Hochschule Fachhochschule Dortmund->New Representation->new Hochschul Diagramm das entsprechende Diagramm aus dem Viewpoint ausgewählt werden. Darauf hin wird automatisch ein Diagramm erstellt und in der Oberfläche der Entwicklungsumgebung angezeigt.
-* Bild von fertigen Modell
+
+![Vollständiges Diagramm mit Objekten und Beziehungen](media/15_erstes_Diagramm.png){#fig:firstdiagramm width=80%}
 
 ### Entwicklung grafischer Modellierungswerkzeuge
 Da es beider Erstellung eines solchen Modellierungswerkzeuges auch sinnvoll ist, dass aus Diagramm heraus neue Objekte hinzugefügt werden können, werden zusätzliche Werkzeuge entwickelt. Diese Werkzeuge könne dann von den Benutzern eingesetzt werden, um z.B. einen neuen Studenten oder ein neues Modul, so wie einen Dozenten zu erstellen. Des Weiteren wird ein Werkzeug entwickelt, welches den Benutzern die Möglichkeit bietet, zwischen den Objekten Beziehungen zu erstellen.
@@ -177,13 +185,29 @@ Für die Erstellung weiterer Nodes sind im Folgenden die Werte, für die Erstell
         Feature Name: "bezeichnung"<br>
         Value Expression: "aql:'modul'+container.modul->filter(hochschule::Modul)->size()"
 
-* bild von node creation
 
-Da es zwischen den Objekten auch Beziehungen gibt, muss es auch eine Möglichkeit geben diese durch ein Modellierungswerkzeug zu erstellen. Die Erstellung dieser Werkzeuge läuft ähnlich, wie die Erstellung der Node Creation, ab. Zu nächst wird der Section ein Edge Creation Tool, über Rechtsklick auf Section->New Element Creation-> Edge Creation, hinzugefügt. Diese Edge Creation bekommt als Id den Wert "setStudentToModul" und für das Edge Mapping wird die Egde StudentToModul ausgewählt. Auch hier wird in der Begin Action ein Change Context erstellt. Der Change Context erhält für die Browse Expression den Wert "var:source" und nicht "var:target", wie bei der Erstellung der Node Creation. Dem Change Context wiederum wird direkt eine Set Operation hinzugefügt. Die Set Operation hat für den Feature Name den Wert "modulW und für die Value Expression den Wert "var:target".
-* bild von edge creation
+
+![Node Creation "createStudent" mit Id und Node Mapping](media/18_createStudent.png){#fig:nodecreat width=30%}
+
+![Create Instance mit Reference Name und Type Name](media/19_createInstance.png){#fig:instacreat width=30%}
+
+![Set Operation mit Feature Name und Value Expression](media/20_setName.png){#fig:setname width=30%}
+
+
+
+Da es zwischen den Objekten auch Beziehungen gibt, muss es auch eine Möglichkeit geben diese durch ein Modellierungswerkzeug zu erstellen. Die Erstellung dieser Werkzeuge läuft ähnlich, wie die Erstellung der Node Creation, ab. Zu nächst wird der Section ein Edge Creation Tool, über Rechtsklick auf Section->New Element Creation-> Edge Creation, hinzugefügt. Diese Edge Creation bekommt als Id den Wert "setStudentToModul" und für das Edge Mapping wird die Egde StudentToModul ausgewählt. Auch hier wird in der Begin Action ein Change Context erstellt. Der Change Context erhält für die Browse Expression den Wert "var:source" und nicht "var:target", wie bei der Erstellung der Node Creation. Dem Change Context wiederum wird direkt eine Set Operation hinzugefügt. Die Set Operation hat für den Feature Name den Wert "modul" und für die Value Expression den Wert "var:target".
+
+![Edge cration "setStudentToModul" mit Id und Edge Mapping](media/22_createEdge.png){#fig:createEdge width=30%}
+
+![Change Context mit Browse Expression](media/23_changecontext.png){#fig:cdcontext width=30%}
+
+![Set Operation mit Feature Name und Value Expression](media/24_setModul.png){#fig:setModul width=30%}
+
 
 Nun da die Erstellung der Modellierungswerkzeuge abgeschlossen ist, können die Benutzer direkt Objekte und Beziehungen erstellen. Diese Modellierungswerkzeuge werden standardmäßig rechts neben dem Diagramm angezeigt.
-* bild von werkzeugen.
+
+
+![Erstellte Werkzeuge im Editor](media/26_createDozentMOdul_done.png){#fig:werkzeuge width=50%}
 
 # Tooling und Installation
 Für die Benutzung von Eclipse Sirius braucht man nicht viel Software und noch weniger Konfigurationsaufwand. Die Firma Obeo, welche für die Entwicklung von Eclipse Sirius verantwortlich ist, bietet auf Ihrer Website eine vorkonfigurierte Entwicklungsumgebung, den Obeo Designer, an. Der Obeo Designer basiert auf der herkömmlichen Entwicklungsumgebung Eclipse. Allerdings enthält der Obeo Designer schon Eclipse Sirius und die benötigten Frameworks, welche für ein reibungsloses Arbeiten benötigt werden. Deshalb wird in diesem Abschnitt nicht erklärt, wie man Eclipse Sirius in ein herkömmliches Eclipse einbindet. Es ist an dieser Stelle das Einfachste, um Zeit und Aufwand zu sparen, den Obeo Designer herunterzuladen und zu benutzen. 
